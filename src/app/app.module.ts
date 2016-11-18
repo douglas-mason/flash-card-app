@@ -5,11 +5,13 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { FlashCardComponent } from './flash-card/flash-card.component';
+import { FlashCardListComponent } from './flash-card-list/flash-card-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FlashCardComponent
+    FlashCardComponent,
+    FlashCardListComponent
   ],
   imports: [
     BrowserModule,
