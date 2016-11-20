@@ -17,6 +17,10 @@ export class FlashCardComponent implements OnInit {
   ngOnInit() {
   }
 
+  speakCard(val) {
+    speechSynthesis.speak(new SpeechSynthesisUtterance(val));
+  }
+
   onDelete(flashCard) {
     this.flashCardService.delete(flashCard);
   }
