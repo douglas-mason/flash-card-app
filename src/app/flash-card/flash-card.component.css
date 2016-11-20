@@ -1,0 +1,11 @@
+.flash-card-container {
+  border-radius: 5px;
+  box-shadow: 0 2 0 2;
+  height: 100px;
+  width: 300px;
+  border: 1px solid #000;
+  font-size: 24pt;
+  line-height: 0.5em;
+  display: flex;
+  justify-content: space-between;
+}

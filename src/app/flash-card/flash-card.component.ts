@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FlashCard } from './../flash-card';
+import { FlashCardService } from './../flash-card.service';
 
 @Component({
   selector: 'app-flash-card',
@@ -10,10 +11,14 @@ export class FlashCardComponent implements OnInit {
 
   @Input() flashCard: FlashCard;
 
-  constructor() {
+  constructor(private flashCardService: FlashCardService) {
   }
 
   ngOnInit() {
+  }
+
+  onDelete(flashCard) {
+    this.flashCardService.delete(flashCard);
   }
 
 }

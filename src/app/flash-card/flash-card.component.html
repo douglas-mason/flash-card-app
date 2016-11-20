@@ -1,4 +1,5 @@
-<div>
+<div class="flash-card-container">
   <h2>{{ flashCard.title }}</h2>
-  <p>{{ flashCard.description }}</p>
+  <!--<p>{{ flashCard.description }}</p>-->
+  <button (ngIf)="editMode" (click)="onDelete(flashCard)">X</button>
 </div>

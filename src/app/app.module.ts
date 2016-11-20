@@ -6,19 +6,24 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { FlashCardComponent } from './flash-card/flash-card.component';
 import { FlashCardListComponent } from './flash-card-list/flash-card-list.component';
+import { FlashCardFormComponent } from './flash-card-form/flash-card-form.component';
+import { FlashCardService } from './flash-card.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     FlashCardComponent,
-    FlashCardListComponent
+    FlashCardListComponent,
+    FlashCardFormComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [
+    FlashCardService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

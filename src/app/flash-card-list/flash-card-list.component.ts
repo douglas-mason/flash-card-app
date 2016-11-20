@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FlashCard } from './../flash-card';
-import { PouchDB } from 'pouchdb';
+import { FlashCardService } from './../flash-card.service';
 
 @Component({
   selector: 'app-flash-card-list',
@@ -8,13 +8,10 @@ import { PouchDB } from 'pouchdb';
   styleUrls: ['./flash-card-list.component.css']
 })
 export class FlashCardListComponent implements OnInit {
-  flashCards: FlashCard[] = [
-    new FlashCard('the'),
-    new FlashCard('and')
-  ];
-  constructor() { }
+  flashCards: FlashCard[];
+  constructor(private flashCardService: FlashCardService) { }
 
-  ngOnInit() {
+  async ngOnInit() {
+    this.flashCards = await this.flashCardService.getAll();
   }
-
 }
