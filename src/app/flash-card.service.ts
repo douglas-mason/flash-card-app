@@ -37,6 +37,6 @@ export class FlashCardService {
 
   delete(doc) {
     console.log('delete doc',doc);
-    this._db.remove(doc._id, doc._rev);
+    return this._db.remove(doc._id, doc._rev);
   }
 }

@@ -1,10 +1,11 @@
 export class FlashCard {
-  id: string;
+  _id: string;
+  _rev: string;
   title: string;
   description: string;
 
   constructor(title = '', description = '') {
-    this.id = new Date().toISOString();
+    this._id = new Date().toISOString();
     this.title = title;
     this.description = description;
   }
