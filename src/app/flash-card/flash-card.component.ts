@@ -2,6 +2,9 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FlashCard } from './../flash-card';
 import { FlashCardService } from './../flash-card.service';
 
+declare var SpeechSynthesisUtterance: any;
+declare var speechSynthesis: any;
+
 @Component({
   selector: 'app-flash-card',
   templateUrl: './flash-card.component.html',
