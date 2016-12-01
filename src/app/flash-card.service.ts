@@ -3,14 +3,14 @@ import * as PouchDb from 'pouchdb';
 
 @Injectable()
 export class FlashCardService {
-  private _db;
+  private db;
 
   constructor() {
-    this._db = new PouchDb('flashCards');
+    this.db = new PouchDb('flashCards');
   }
 
   add(title, description) {
-    return this._db.put({
+    return this.db.put({
       _id: Date.now().toString(),
       title,
       description
@@ -18,11 +18,11 @@ export class FlashCardService {
   }
 
   get(id) {
-    return this._db.get(id);
+    return this.db.get(id);
   }
 
   async getAll() {
-    const data = await this._db.allDocs({
+    const data = await this.db.allDocs({
       include_docs: true
     });
     return data.rows.map((row) => {
@@ -37,6 +37,6 @@ export class FlashCardService {
 
   delete(doc) {
     console.log('delete doc',doc);
-    return this._db.remove(doc._id, doc._rev);
+    return this.db.remove(doc._id, doc._rev);
   }
 }
