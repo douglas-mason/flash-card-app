@@ -8,12 +8,16 @@
   </div>
   <div class="row">
     <div class="col-xs-12">
-      <app-flash-card-form></app-flash-card-form>
+      <!--<app-flash-card-form></app-flash-card-form>-->
+      <a uiSref="form" uiSrefActive="active">New</a>
+      <a uiSref="list" uiSrefActive="active">List</a>
+      <a uiSref="slide" uiSrefActive="active">Practice</a>
+      <ui-view></ui-view>
     </div>
   </div>
-  <div class="row">
+  <!--<div class="row">
     <div class="col-xs-12">
       <app-flash-card-list></app-flash-card-list>
     </div>
-</div>
+  </div>-->
 </div>

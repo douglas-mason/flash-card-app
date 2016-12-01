@@ -7,19 +7,42 @@ import { AppComponent } from './app.component';
 import { FlashCardComponent } from './flash-card/flash-card.component';
 import { FlashCardListComponent } from './flash-card-list/flash-card-list.component';
 import { FlashCardFormComponent } from './flash-card-form/flash-card-form.component';
+import { FlashCardSlideComponent } from './flash-card-slide/flash-card-slide.component';
 import { FlashCardService } from './flash-card.service';
+import { UIRouterModule, Ng2StateDeclaration } from 'ui-router-ng2';
+
+const flashCardFormState: Ng2StateDeclaration = {
+  name: 'form',
+  url: '/flashcards',
+  component: FlashCardFormComponent
+};
+const flashCardListState: Ng2StateDeclaration = {
+  name: 'list',
+  url: '/flashcards/new',
+  component: FlashCardListComponent
+};
+const flashCardSlideState: Ng2StateDeclaration = {
+  name: 'slide',
+  url: '/flashcards/practice',
+  component: FlashCardSlideComponent
+};
 
 @NgModule({
   declarations: [
     AppComponent,
     FlashCardComponent,
     FlashCardListComponent,
-    FlashCardFormComponent
+    FlashCardFormComponent,
+    FlashCardSlideComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    UIRouterModule.forRoot({
+      states: [flashCardFormState, flashCardListState, flashCardSlideState],
+      useHash: true
+    })
   ],
   providers: [
     FlashCardService

@@ -23,8 +23,6 @@
         "../node_modules/bootstrap/dist/css/bootstrap.css"
       ],
       "scripts": [
-        "../node_modules/pouchdb/dist/pouchdb.js",
-        "../node_modules/ui-router-ng2/router.js"
       ],
       "environments": {
         "source": "environments/environment.ts",
@@ -34,7 +32,7 @@
     }
   ],
   "addons": [],
-  "packages": [],
+  "packages": ["pouchdb", "ui-router-ng2"],
   "e2e": {
     "protractor": {
       "config": "./protractor.conf.js"

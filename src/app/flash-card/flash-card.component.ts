@@ -15,6 +15,7 @@ export class FlashCardComponent implements OnInit {
   @Input() flashCard: FlashCard;
   @Input() isEditMode: boolean;
   @Output() deleteEvent: EventEmitter<any> = new EventEmitter();
+  @Output() onNextEvent: EventEmitter<any> = new EventEmitter();
 
   constructor(private flashCardService: FlashCardService) {
   }
@@ -29,5 +30,10 @@ export class FlashCardComponent implements OnInit {
   async onDelete(flashCard: FlashCard) {
     await this.flashCardService.delete(flashCard);
     this.deleteEvent.emit(flashCard._id);
+  }
+
+  nextCard($event: Event){
+    $event.stopPropagation();
+    this.onNextEvent.emit('next');
   }
 }
