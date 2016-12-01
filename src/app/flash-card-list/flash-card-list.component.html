@@ -1,7 +1,4 @@
-<p>
-  flash-card-list works!
-</p>
-<button (click)="toggleEditMode()">{{ isEditMode ? 'Done' : 'Edit' }}</button>
+<button class="btn btn-success btn-md btn-edit-list" (click)="toggleEditMode()">{{ isEditMode ? 'Done' : 'Edit' }}</button>
 <app-flash-card *ngFor="let flashCard of flashCards"
   [flashCard]="flashCard"
   (deleteEvent)="onDelete($event)"

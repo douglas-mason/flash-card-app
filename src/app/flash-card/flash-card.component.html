@@ -1,4 +1,4 @@
-<div class="flash-card-container">
-  <h2 (click)="speakCard(flashCard.title)">{{ flashCard.title }}</h2>
-  <button *ngIf="isEditMode" (click)="onDelete(flashCard)">X</button>
+<div class="flash-card-container" (click)="speakCard(flashCard.title)">
+  <h2>{{ flashCard.title }}</h2>
+  <button class="btn btn-danger" *ngIf="isEditMode" (click)="onDelete(flashCard)">X</button>
 </div>

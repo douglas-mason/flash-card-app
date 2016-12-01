@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { FlashCard } from './../flash-card';
 import { FlashCardService } from './../flash-card.service';
 
@@ -8,6 +8,8 @@ import { FlashCardService } from './../flash-card.service';
   styleUrls: ['./flash-card-form.component.css']
 })
 export class FlashCardFormComponent implements OnInit {
+
+  @Output() addEvent: EventEmitter<any> = new EventEmitter();
 
   model: FlashCard = new FlashCard();
 
@@ -19,5 +21,6 @@ export class FlashCardFormComponent implements OnInit {
   onSubmit() {
     this.flashCardService.add(this.model.title, this.model.description);
     console.log(JSON.stringify(this.model));
+    this.addEvent.emit(this.model);
   }
 }

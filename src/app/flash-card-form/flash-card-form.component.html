@@ -1,5 +1,17 @@
-<form (ngSubmit)="onSubmit()" #flashCardForm="ngForm">
-  <input type="text" [(ngModel)]="model.title" placeholder="Title" name="title">
-  <input type="text" [(ngModel)]="model.description" placeholder="Description" name="description">
-  <button type="submit">Submit</button>
-</form>
+<div class="row">
+  <div class="col-xs-12">
+    <form (ngSubmit)="onSubmit()" #flashCardForm="ngForm">
+      <div class="row">
+        <div class="col-xs-6 col-sm-5">
+          <input type="text" class="form-control" [(ngModel)]="model.title" placeholder="Title" name="title">
+        </div>
+        <div class="col-xs-6 col-sm-5">
+          <input type="text" class="form-control" [(ngModel)]="model.description" placeholder="Description" name="description">
+        </div>
+        <div class="col-xs-12 col-sm-2">
+          <button class="btn btn-primary btn-md btn-submit-new-card" type="submit">Submit</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
