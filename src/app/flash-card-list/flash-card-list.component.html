@@ -4,7 +4,7 @@
     <app-flash-card *ngFor="let flashCard of flashCards"
       [flashCard]="flashCard"
       (deleteEvent)="onDelete($event)"
-      [isEditMode]="isEditMode">
+      [mode]="mode">
     </app-flash-card>
   </div>
 </div>

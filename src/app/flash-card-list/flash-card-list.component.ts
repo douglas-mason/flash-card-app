@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FlashCard } from './../flash-card';
+import { FlashCardModes } from './../_shared/flash-card-modes.enum.ts';
 import { FlashCardService } from './../flash-card.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { FlashCardService } from './../flash-card.service';
 })
 export class FlashCardListComponent implements OnInit {
   flashCards: FlashCard[];
-  isEditMode: boolean = false;
+  mode: FlashCardModes = FlashCardModes.list;
   constructor(private flashCardService: FlashCardService) { }
 
   async ngOnInit() {
@@ -26,6 +27,8 @@ export class FlashCardListComponent implements OnInit {
   }
 
   toggleEditMode() {
-    this.isEditMode = !this.isEditMode;
+    this.mode = this.mode === FlashCardModes.list
+      ? FlashCardModes.edit
+      : FlashCardModes.list;
   };
 }

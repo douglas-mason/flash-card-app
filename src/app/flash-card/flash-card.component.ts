@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FlashCard } from './../flash-card';
+import { FlashCardModes } from './../_shared/flash-card-modes.enum.ts';
 import { FlashCardService } from './../flash-card.service';
 
 declare var SpeechSynthesisUtterance: any;
@@ -13,9 +14,11 @@ declare var speechSynthesis: any;
 export class FlashCardComponent implements OnInit {
 
   @Input() flashCard: FlashCard;
-  @Input() isEditMode: boolean;
+  @Input() mode: FlashCardModes;
   @Output() deleteEvent: EventEmitter<any> = new EventEmitter();
   @Output() onNextEvent: EventEmitter<any> = new EventEmitter();
+
+  flashCardModes = FlashCardModes;
 
   constructor(private flashCardService: FlashCardService) {
   }
