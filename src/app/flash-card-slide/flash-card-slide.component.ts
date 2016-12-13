@@ -23,6 +23,9 @@ export class FlashCardSlideComponent implements OnInit {
   }
 
   onNext($event) {
-    this.currentCard = this.flashCards[++this.currentCardIndex];
+    this.currentCardIndex = this.currentCardIndex
+      === this.flashCards.length - 1
+      ? 0 : ++this.currentCardIndex;
+    this.currentCard = this.flashCards[this.currentCardIndex];
   }
 }
