@@ -10,6 +10,7 @@ import { FlashCardFormComponent } from './flash-card-form/flash-card-form.compon
 import { FlashCardSlideComponent } from './flash-card-slide/flash-card-slide.component';
 import { FlashCardService } from './flash-card.service';
 import { UIRouterModule, Ng2StateDeclaration } from 'ui-router-ng2';
+import { GeneralAlertComponent } from './general-alert/general-alert.component';
 
 const flashCardFormState: Ng2StateDeclaration = {
   name: 'form',
@@ -33,7 +34,8 @@ const flashCardSlideState: Ng2StateDeclaration = {
     FlashCardComponent,
     FlashCardListComponent,
     FlashCardFormComponent,
-    FlashCardSlideComponent
+    FlashCardSlideComponent,
+    GeneralAlertComponent
   ],
   imports: [
     BrowserModule,

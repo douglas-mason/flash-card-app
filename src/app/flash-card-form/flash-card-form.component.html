@@ -12,6 +12,11 @@
           <button class="btn btn-primary btn-md btn-submit-new-card" type="submit">Submit</button>
         </div>
       </div>
+      <div class="row" *ngIf="hasAlert">
+        <div class="col-xs-12">
+          <app-general-alert [message]="alertMessage" [type]="alertType"></app-general-alert>
+        </div>
+      </div>
     </form>
   </div>
 </div>

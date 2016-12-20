@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FlashCard } from './../flash-card';
-import { FlashCardModes } from './../_shared/flash-card-modes.enum.ts';
+import { FlashCardModes } from './../_shared/flash-card-modes.enum';
 import { FlashCardService } from './../flash-card.service';
 
 @Component({
@@ -11,13 +11,13 @@ import { FlashCardService } from './../flash-card.service';
 export class FlashCardSlideComponent implements OnInit {
   flashCards: FlashCard[];
   currentCardIndex = 0;
-  currentCard: FlashCard = new FlashCard();
+  currentCard: FlashCard;
   flashCardModes = FlashCardModes;
   constructor(private flashCardService: FlashCardService) { }
 
   async ngOnInit() {
     this.flashCards = await this.flashCardService.getAll();
-    if(this.flashCards.length) {
+    if (this.flashCards.length) {
       this.currentCard = this.flashCards[0];
     }
   }
