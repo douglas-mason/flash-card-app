@@ -1,6 +1,11 @@
 <div class="row">
   <div class="col-xs-12">
-    <button class="btn btn-success btn-md btn-edit-list" (click)="toggleEditMode()">{{ isEditMode ? 'Done' : 'Edit' }}</button>
+    <button class="btn btn-success btn-md btn-edit-list col-xs-12 col-sm-2"
+      (click)="toggleEditMode()">{{ isEditMode ? 'Done' : 'Edit' }}</button>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12 flash-card-list-container">
     <app-flash-card *ngFor="let flashCard of flashCards"
       [flashCard]="flashCard"
       (deleteEvent)="onDelete($event)"
