@@ -8,7 +8,7 @@
   <div class="col-xs-12 flash-card-list-container">
     <app-flash-card *ngFor="let flashCard of flashCards"
       [flashCard]="flashCard"
-      (deleteEvent)="onDelete($event)"
+      (delete)="onDelete($event)"
       [mode]="mode">
     </app-flash-card>
   </div>

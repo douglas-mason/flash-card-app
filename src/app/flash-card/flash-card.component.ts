@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FlashCard } from './../flash-card';
-import { FlashCardModes } from './../_shared/flash-card-modes.enum.ts';
+import { FlashCardModes } from './../_shared/flash-card-modes.enum';
 import { FlashCardService } from './../flash-card.service';
 
 declare var SpeechSynthesisUtterance: any;
@@ -15,8 +15,8 @@ export class FlashCardComponent implements OnInit {
 
   @Input() flashCard: FlashCard;
   @Input() mode: FlashCardModes;
-  @Output() deleteEvent: EventEmitter<any> = new EventEmitter();
-  @Output() onNextEvent: EventEmitter<any> = new EventEmitter();
+  @Output() delete: EventEmitter<any> = new EventEmitter();
+  @Output() next: EventEmitter<any> = new EventEmitter();
 
   flashCardModes = FlashCardModes;
 
@@ -30,13 +30,13 @@ export class FlashCardComponent implements OnInit {
     speechSynthesis.speak(new SpeechSynthesisUtterance(val));
   }
 
-  async onDelete(flashCard: FlashCard) {
+  async deleteCard(flashCard: FlashCard) {
     await this.flashCardService.delete(flashCard);
-    this.deleteEvent.emit(flashCard._id);
+    this.delete.emit(flashCard._id);
   }
 
   nextCard($event: Event){
     $event.stopPropagation();
-    this.onNextEvent.emit('next');
+    this.next.emit($event);
   }
 }

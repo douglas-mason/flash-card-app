@@ -5,7 +5,7 @@
       *ngIf="currentCard"
       [flashCard]="currentCard"
       [mode]="flashCardModes.practice"
-      (onNextEvent)="onNext($event)">
+      (next)="onNext($event)">
     </app-flash-card>
   </div>
   <div class="col-xs-12"

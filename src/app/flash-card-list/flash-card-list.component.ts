@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FlashCard } from './../flash-card';
-import { FlashCardModes } from './../_shared/flash-card-modes.enum.ts';
+import { FlashCardModes } from './../_shared/flash-card-modes.enum';
 import { FlashCardService } from './../flash-card.service';
 
 @Component({
