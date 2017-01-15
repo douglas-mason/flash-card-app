@@ -1,5 +1,12 @@
-<div class="flash-card-container" (click)="mode === flashCardModes.practice && speakCard(flashCard.title)">
+<div class="flash-card-container"
+  (click)="mode === flashCardModes.practice && speakCard(flashCard.title)">
   <h2>{{ flashCard.title }}</h2>
-  <button class="btn btn-danger" *ngIf="mode === flashCardModes.edit" (click)="deleteCard(flashCard)">X</button>
-  <button class="btn btn-success" *ngIf="mode === flashCardModes.practice" (click)="nextCard($event)">Next Card</button>
+  <button class="btn btn-danger"
+    *ngIf="mode === flashCardModes.edit"
+    (click)="deleteCard(flashCard)">X
+  </button>
+  <button class="btn btn-success"
+    *ngIf="mode === flashCardModes.practice"
+    (click)="nextCard($event)">Next Card
+    </button>
 </div>
